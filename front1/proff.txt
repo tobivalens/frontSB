@@ -1,0 +1,21 @@
+VERSION UNO QUE NO SE SI FUNCIona
+const startMeasureBtn= document.getElementById("startMeasure");
+
+const client = new Paho.MQTT.Client("broker.hivemq.com", Number(8000), "cliente_web");
+
+client.connect({
+    onSuccess: onConnect
+});
+
+function onConnect() {
+    console.log("Conectado al  MQTT");
+}
+
+startMeasureBtn.addEventListener('click', function() {
+    const message = new Paho.MQTT.Message("m");  
+    message.destinationName = "icesitel/medicion";  
+    client.send(message);  
+    console.log("Mensaje MQTT enviado: Iniciar Medición");
+});
+
+
