@@ -2,7 +2,7 @@ const startMeasureBtn= document.getElementById("startMeasure");
 const label = document.getElementById("measureLabel");
 
 
-const client = new Paho.MQTT.Client("broker.hivemq.com", Number(8000), "cliente_web");
+const client = new Paho.MQTT.Client("broker.emqx.io", Number(8083), "clienteWebValensBcknd");
 const topic= "icesitel"
 
 
@@ -43,6 +43,7 @@ const sendMessage = (msg) => {
     client.send(message);
 };
 
+
 startMeasureBtn.addEventListener("click", (event)=>{
     event.preventDefault();
     let messageText= "m";
@@ -50,6 +51,20 @@ startMeasureBtn.addEventListener("click", (event)=>{
     console.log("Mensaje MQTT enviado: Iniciar Medición");
 
 });
+
+
+client.onMessageArrived = (message) => {
+    const receivedMessage = message.payloadString;
+    console.log("Mensaje MQTT recibido:", receivedMessage);
+
+    if (receivedMessage === "E") {
+        console.log("moc");
+
+        location.href= "Monitor.html";
+    }
+};
+
+
 
 
 
