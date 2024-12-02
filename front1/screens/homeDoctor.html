@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            background: white;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .button1 {
+            background-color: #3498db;
+        }
+        .button1:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .button2 {
+            background-color: #e74c3c;
+        }
+        .button2:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        .button3 {
+            background-color: #2ecc71;
+        }
+        .button3:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+        .profile-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #9b59b6;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .profile-button:hover {
+            background-color: #8e44ad;
+            transform: translateY(-2px);
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #95a5a6;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #7f8c8d;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="back-button" id="backButton">Atrás</button>
+
+    <div class="container">
+        <h1>Bienvenido Doctor</h1>
+        <p>Escoge una opción</p>
+        <button id="measureButton" class="button button1">Tomar una Muestra</button>
+        <button id="patientsButton" class="button button2">Ver Pacientes</button>
+        <button id="registerPatientButton" class="button button3">Registrar Paciente</button>
+    </div>
+
+</body>
+<script src="./../scripts/homeDoctor.js"></script>
+</html>
